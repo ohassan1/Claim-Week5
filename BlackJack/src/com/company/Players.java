@@ -4,7 +4,7 @@ package com.company;
 public class Players {
 
 
-    private String dealerName = "Tiffany";
+    private String dealerName = "Tiffanie";
 
 
     public String getDealerName() {

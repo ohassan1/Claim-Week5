@@ -10,6 +10,9 @@ public class Game {
     public String[] dealerHand;
     public String[] playerHand;
 
+    public int dealerScore;
+    public int playerScore;
+
     public void getNames() {
 
         ArrayList<String> playerNames = new ArrayList<String>();
@@ -22,8 +25,7 @@ public class Game {
 
         boolean playerBust = false;
         boolean dealerBust = false;
-        int dealerScore;
-        int playerScore;
+
 
 
 
@@ -33,9 +35,6 @@ public class Game {
 
         makeDeck();
         dealHand();
-
-
-
 
         do {
             dealerScore = 0;
@@ -186,7 +185,11 @@ public class Game {
 
             Scanner sc = new Scanner(System.in);
 
-            System.out.println("Press 1 if you want your ace to count for '1', or 2 for '11'?");
+            if ((playerScore + 11 > 21) || (dealerScore + 11 > 21)) {
+                return 1;
+            }
+
+            System.out.println("Press 1 if you want your ace to count for '1', or 2 for '11'? ");
             if (sc.nextInt() == 1) { return 1; }
             else { return 11; }
 
